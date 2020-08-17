@@ -5,11 +5,8 @@ import control.PacienteControl;
 import control.ProfissionalControl;
 import model.Agenda;
 import model.Paciente;
-import model.Pessoa;
 import model.Profissional;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,7 +20,9 @@ public class Principal {
     }
 
     public static void cadastroPessoas() throws InterruptedException {
+
         Scanner sc = new Scanner(System.in);
+
         List<Profissional> listaProfissional = new ArrayList<>();
         List<Paciente> listaPaciente = new ArrayList<>();
         List<Agenda> listaAgenda = new ArrayList<>();
@@ -48,7 +47,7 @@ public class Principal {
             opcao = Integer.parseInt(sc.nextLine());
 
             if (opcao == 1) {
-                //Cria um novo objeto
+
 
                 System.out.print("Digite o nome: ");
                 String nome = sc.nextLine();
@@ -78,7 +77,7 @@ public class Principal {
                 }
             }
             if (opcao == 2) {
-                //Cria um novo objeto
+
 
                 System.out.print("Digite o nome: ");
                 String nome = sc.nextLine();

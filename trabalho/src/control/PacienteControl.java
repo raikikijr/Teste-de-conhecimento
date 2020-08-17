@@ -12,7 +12,6 @@ public class PacienteControl {
         paciente.setIdade(Integer.parseInt(idade));
         paciente.setEndereco(endereco);
         paciente.setId(id);
-
         return paciente;
     }
 
@@ -20,17 +19,17 @@ public class PacienteControl {
         int cont = 0;
         String retorno = "";
         if (nome.isEmpty()) {
-            retorno = "Por favor insira seu nome";
+            retorno = "Erro ao inserir o nome";
             cont++;
         }
 
         if (idade.isEmpty()) {
-            retorno = cont < 1 ? "Por favor insira sua idade" : retorno.concat(", insira sua idade");
+            retorno = cont < 1 ? "Erro ao inserir a idade" : retorno.concat(", erro  no campo idade");
             cont++;
         }
 
         if (endereco.isEmpty()) {
-            retorno = cont < 1 ? "Por favor insira seu endereço" : retorno.concat(", insira seu endereço");
+            retorno = cont < 1 ? "Erro ao inserir o endereço " : retorno.concat(", erro no campo endereço");
         }
         return retorno;
     }

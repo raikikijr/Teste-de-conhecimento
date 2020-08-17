@@ -20,17 +20,17 @@ public class ProfissionalControl {
         int cont = 0;
         String retorno = "";
         if (nome.isEmpty()) {
-            retorno = "Por favor insira seu nome";
+            retorno = "Erro ao inserir o nome";
             cont++;
         }
 
         if (departamento.isEmpty()) {
-            retorno = cont < 1 ? "Por favor insira seu departamento" : retorno.concat(", insira seu departamento");
+            retorno = cont < 1 ? "Erro ao inserir o departamento" : retorno.concat(", erro no campo departamento");
             cont++;
         }
 
         if (especialidade.isEmpty()) {
-            retorno = cont < 1 ? "Por favor insira sua especialidade" : retorno.concat(", insira sua especialidade");
+            retorno = cont < 1 ? "Erro ao inserir a especialidade" : retorno.concat(", erro no campo especialidade");
         }
         return retorno;
     }

@@ -48,12 +48,12 @@ public class AgendaControl {
         int cont = 0;
         String retorno = "";
         if (hora.isEmpty()) {
-            retorno = "Por favor insira seu horario";
+            retorno = "Erro ao inserir hora";
             cont++;
         }
 
         if (data.isEmpty()) {
-            retorno = cont < 1 ? "Por favor insira sua data" : retorno.concat(", insira sua data");
+            retorno = cont < 1 ? "Erro ao inserir data" : retorno.concat(", erro no campo Data");
             cont++;
         }
 
