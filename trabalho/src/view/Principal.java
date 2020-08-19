@@ -14,6 +14,7 @@ public class Principal {
     public static void main(String[] args)  {
         try {
             cadastroPessoas();
+
         } catch (InterruptedException e) {
             System.out.println("Erro no sistema.");
         }
@@ -44,7 +45,17 @@ public class Principal {
             System.out.println("_______________________");
 
             System.out.print("Digite aqui sua opção: ");
-            opcao = Integer.parseInt(sc.nextLine());
+
+            String verificandoOpcao = sc.nextLine();
+
+            if (isNumeric(verificandoOpcao)){
+                opcao = Integer.parseInt(verificandoOpcao);
+
+            } else {
+                System.out.println("Opção inválida.");
+                opcao = 11;
+                Thread.currentThread().sleep(2000);
+            }
 
             if (opcao == 1) {
 
@@ -391,5 +402,17 @@ public class Principal {
 
         while (opcao != 0);
         sc.close();
+    }
+    private static boolean isNumeric(String str) {
+        if (str == null) {
+            return false;
+        }
+        int sz = str.length();
+        for (int i = 0; i < sz; i++) {
+            if (Character.isDigit(str.charAt(i)) == false) {
+                return false;
+            }
+        }
+        return true;
     }
 }
